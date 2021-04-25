@@ -11,7 +11,6 @@ export async function getStaticProps() {
         props: {
             data,
         },
-        fallback: "blocking",
     };
 }
 
