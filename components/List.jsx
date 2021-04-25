@@ -1,21 +1,7 @@
-import React from 'react';
+import Head from 'next/head';
 import styled from 'styled-components';
 import Link from 'next/link'
-import GlobalStyle from './GlobalStyle';
-const keyword = '新宿';
-const utf8str = unescape(encodeURIComponent(keyword));
-
-export async function getStaticProps() {
-    const res = await fetch(`http://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=${process.env.API_KEY}&keyword=${utf8str}&genre=G001&count=30&format=json`);
-    const dataList = await res.json();
-    const data = dataList.results.shop;
-    
-    return {
-        props: {
-            data,
-        }
-    };
-}
+import GlobalStyle from '../pages/GlobalStyle';
 
 const List = (props) => {
     const {data} = props;

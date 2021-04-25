@@ -15,7 +15,7 @@ export default function Home() {
         <SH1>居酒屋検索アプリ</SH1>
         {console.log(key)}
         <SGet>
-          <Link href='/List'><SLinkStyle>新宿の居酒屋はこちら!</SLinkStyle></Link>
+          <Link href='/Lists'><SLinkStyle>新宿の居酒屋はこちら!</SLinkStyle></Link>
         </SGet>
        
       </SBody>
