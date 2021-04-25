@@ -22,6 +22,9 @@ const List = (props) => {
     return(
         <SListContainer>
             <GlobalStyle />
+            <Head>
+                <title>居酒屋検索</title>
+            </Head>
             <SMainTitle>新宿おすすめ居酒屋</SMainTitle>
             {data.map((value, index)=> {
                 return(

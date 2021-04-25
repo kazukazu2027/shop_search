@@ -9,7 +9,7 @@ export default function Home() {
     <SContainer>
       <GlobalStyle />
       <Head>
-        <title>Create Next App</title>
+        <title>居酒屋検索</title>
       </Head>
       <SBody>
         <SH1>居酒屋検索アプリ</SH1>
