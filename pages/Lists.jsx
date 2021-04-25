@@ -1,4 +1,3 @@
-import styled from 'styled-components';
 import List from '../components/List'
 const keyword = '新宿';
 const utf8str = unescape(encodeURIComponent(keyword));
@@ -11,7 +10,8 @@ export async function getStaticProps() {
     return {
         props: {
             data,
-        }
+        },
+        fallback: "blocking",
     };
 }
 
