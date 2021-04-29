@@ -1,86 +1,97 @@
-import Head from 'next/head';
 import styled from 'styled-components';
-import Link from 'next/link'
 import GlobalStyle from '../pages/GlobalStyle';
 
-const List = (props) => {
-    const {data} = props;
-    return(
+export const List = (props) => {
+    const {list} = props;
+    return (
         <SListContainer>
             <GlobalStyle />
-            <Head>
-                <title>居酒屋検索</title>
-            </Head>
-            <SMainTitle>新宿おすすめ居酒屋</SMainTitle>
-            {data.map((value, index)=> {
-                return(
-                    <Link href={`/lists/${data.id}`} key={index}>
-                        <SContainer>
-                            <SList>
-                                <SPicture>
-                                    <SImg src={value.photo.mobile.s} alt=""/>
-                                </SPicture>
-                                <SContent>
-                                    <STitle>{value.name}</STitle>
-                                    <SAccess>{value.address}</SAccess>
-                                </SContent>
-                            </SList> 
-                        </SContainer>
-                    </Link>
-                )
-
-            })}
+            <SPicture>
+                <SImage src={list.photo.pc.l} />
+            </SPicture>
+            <STitle>{list.name}</STitle>
+            <SContent>
+                <SIcon>
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                </SIcon>
+                <SP>{list.access}</SP>
+            </SContent>
+            <SContent>
+                <SIconHouse>
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                    </svg>
+                </SIconHouse>
+                <SP>{list.address}</SP>
+            </SContent>
+            <SContent>
+                <SIconOpen>
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                </SIconOpen>
+                <SP>{list.open}</SP>
+            </SContent>
+            <SContent>
+                <SIconMoney>
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 8l3 5m0 0l3-5m-3 5v4m-3-5h6m-6 3h6m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                </SIconMoney>
+                <SP>{list.budget.name}</SP>
+            </SContent>
         </SListContainer>
     )
 }
 
-export default List;
-
 const SListContainer = styled.div`
-`;
-
-const SMainTitle = styled.h1`
-    font-size: 3rem;
-    text-align: center;
-`;
-
-const SContainer = styled.div`
-    width: 98%;
+    width: 70%;
     margin: 0 auto;
-    
-`;
-
-const SList = styled.div`
-    display: flex;
-    border-radius: 14px;
-    background-color: #fff;
-    border: 1px solid;
-    margin-bottom: 2rem;
 `;
 
 const SPicture = styled.div`
-    width: 20%;
+    text-align: center;
 `;
 
-const SImg = styled.img`
-    border-radius: 14px 0 0 14px;
-    height: auto;
+const SImage = styled.img`
     width: 100%;
+    height: 30rem;
+    margin: 0 auto;
+`;
+
+const STitle = styled.h2`
+    font-size: 3rem;
 `;
 
 const SContent = styled.div`
-    padding-left: 2rem;
-    width: 80%;
+    display: flex;
+    margin-bottom: 1rem;
 `;
 
-const STitle = styled.h4`
-    margin: 0;
-    padding: 2rem 0 0 0;
-    font-size: 1.5rem;
-    font-weight: bold;
+const SIcon = styled.div`
+    width: 3rem;
+    margin-right: 1rem;
 `;
 
-const SAccess = styled.p`
-    margin: 0;
-    padding: 1rem 0 0 0;
+const SP = styled.div`
+    font-size: 1rem;
+`;
+
+
+const SIconHouse = styled.div`
+    width: 1.8rem;
+    margin-right: 1rem
+`;
+
+const SIconOpen = styled.div`
+    width: 11rem;
+    margin-right: 1rem;
+`;
+
+const SIconMoney = styled.div`
+    width: 1.7rem;
+    margin-right: 1rem;
 `;

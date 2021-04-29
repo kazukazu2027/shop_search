@@ -1,8 +1,9 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import { useState } from 'react';
 import styled from 'styled-components';
 import GlobalStyle from './GlobalStyle';
-const key = process.env.API_KEY
+
 
 export default function Home() {
   return (
@@ -13,9 +14,8 @@ export default function Home() {
       </Head>
       <SBody>
         <SH1>居酒屋検索アプリ</SH1>
-        {console.log(key)}
         <SGet>
-          <Link href='/Lists'><SLinkStyle>新宿の居酒屋はこちら!</SLinkStyle></Link>
+          <Link href='/Lists/Lists'><SLinkStyle>東京のラーメン特集</SLinkStyle></Link>
         </SGet>
        
       </SBody>
