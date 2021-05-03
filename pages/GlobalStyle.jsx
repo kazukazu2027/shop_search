@@ -14,8 +14,8 @@ const GlobalStyle = createGlobalStyle`
     background-image: radial-gradient(51% 96%, #E7E9E4 10%, #D4D6D1 96%); 
     width: 500px;
     margin: 0 auto;
-    @media(max-width:500px) {
-      width:100%
+    @media(max-width: 500px) {
+      width: 100%;
     }
 `;
 
