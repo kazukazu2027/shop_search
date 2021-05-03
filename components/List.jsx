@@ -48,18 +48,18 @@ export const List = (props) => {
 }
 
 const SListContainer = styled.div`
-    width: 70%;
+    width: 80%;
     margin: 0 auto;
 `;
 
 const SPicture = styled.div`
     text-align: center;
+    margin-top: 4rem;
 `;
 
 const SImage = styled.img`
-    width: 100%;
-    height: 30rem;
     margin: 0 auto;
+    width: 100%;
 `;
 
 const STitle = styled.h2`
@@ -72,26 +72,28 @@ const SContent = styled.div`
 `;
 
 const SIcon = styled.div`
-    width: 3rem;
+    width: 8%;
     margin-right: 1rem;
 `;
 
 const SP = styled.div`
-    font-size: 1rem;
+    font-size: 2rem;
+    width: 90%;
+    margin-top: .3rem;
 `;
 
 
 const SIconHouse = styled.div`
-    width: 1.8rem;
+    width: 8%;
     margin-right: 1rem
 `;
 
 const SIconOpen = styled.div`
-    width: 11rem;
+    width: 8%;
     margin-right: 1rem;
 `;
 
 const SIconMoney = styled.div`
-    width: 1.7rem;
+    width: 8%;
     margin-right: 1rem;
 `;

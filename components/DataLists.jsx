@@ -11,7 +11,7 @@ const List = (props) => {
             <Head>
                 <title>居酒屋検索</title>
             </Head>
-            <SMainTitle>新宿おすすめ居酒屋</SMainTitle>
+            <SMainTitle>近くの居酒屋</SMainTitle>
             {data && data.map((value, index)=> {
                 return(
                     <Link href={`/Lists/${value.id}`} key={index}>
@@ -42,6 +42,8 @@ const SListContainer = styled.div`
 const SMainTitle = styled.h1`
     font-size: 3rem;
     text-align: center;
+    padding: 1rem 2rem;
+  
 `;
 
 const SContainer = styled.div`
@@ -55,32 +57,33 @@ const SList = styled.div`
     border-radius: 14px;
     background-color: #fff;
     border: 1px solid;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 `;
 
 const SPicture = styled.div`
-    width: 20%;
+    width: 25%;
 `;
 
 const SImg = styled.img`
     border-radius: 14px 0 0 14px;
-    height: auto;
+    height: 7rem;
     width: 100%;
 `;
 
 const SContent = styled.div`
-    padding-left: 2rem;
+    padding-left: 1rem;
     width: 80%;
 `;
 
 const STitle = styled.h4`
     margin: 0;
-    padding: 2rem 0 0 0;
-    font-size: 1.5rem;
+    padding: .5rem 0 0 0;
+    font-size: 2rem;
     font-weight: bold;
 `;
 
 const SAccess = styled.p`
+    font-size: 1.6rem;
     margin: 0;
-    padding: 1rem 0 0 0;
+    padding: .5rem 0 0 0;
 `;

@@ -1,6 +1,5 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import { useState } from 'react';
 import styled from 'styled-components';
 import GlobalStyle from './GlobalStyle';
 
@@ -13,34 +12,43 @@ export default function Home() {
         <title>居酒屋検索</title>
       </Head>
       <SBody>
-        <SH1>居酒屋検索アプリ</SH1>
+        <STitle>
+          <SH1>居酒屋検索アプリ</SH1>
+        </STitle>
         <SGet>
-          <Link href='/Lists/Lists'><SLinkStyle>東京のラーメン特集</SLinkStyle></Link>
+          <Link href='/Lists/Lists'><SLinkStyle>近くの居酒屋を<br />検索</SLinkStyle></Link>
         </SGet>
-       
+        {/* <SCopy>
+        Powered by <SA href="http://webservice.recruit.co.jp/">ホットペッパー Webサービス</SA>
+        </SCopy> */}
       </SBody>
     </SContainer>
   )
 }
 
 const SContainer = styled.div`
+  
 `;
+
+const STitle = styled.div`
+  width: 70%
+  margin: 0 auto;
+`;  
 
 const SH1 = styled.h1`
   font-size: 3rem;
   text-align: center;
-  margin: 8rem;
+  margin-top: 8rem;
 `;
 
 const SBody = styled.div`
-
+  position: relative;
 `;
 
 const SLinkStyle = styled.div`
   text-decoration: none;
   padding: 3rem 0;
   text-align: center;
-  word-break: keep-all;
 `;  
 
 const SGet = styled.div`
@@ -49,4 +57,13 @@ const SGet = styled.div`
   width: 50%;
   margin: 0 auto;
   cursor: pointer;
+`;
+
+const SCopy = styled.div`
+  bottom: 0;
+  position: absolute;
+`;
+
+const SA = styled.div`
+  text-decoration: none;
 `;
