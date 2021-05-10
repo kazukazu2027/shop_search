@@ -31,7 +31,7 @@ const fetcher = () => {
 };
 
 const Lists = () => {
-  const { data } = useSWR("default", fetcher);
+  const { data } = useSWR(process.env.API_KEY, fetcher);
   return (
     <>
       <List data={data} />
