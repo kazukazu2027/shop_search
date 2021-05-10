@@ -73,4 +73,3 @@ const SCopy = styled.div`
   padding-top: 2rem;
   padding-left: 10rem;
 `;
-
