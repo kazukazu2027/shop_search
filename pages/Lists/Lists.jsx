@@ -16,18 +16,17 @@ const fetcher = () => {
         .then((res) => {
           const jsonp = res.data;
           const data = jsonp.results.shop;
-          // if (data.length === 0) {
-          //   alert('近くの居酒屋は見つかりませんでした。');
-          //   resolve(data);
-          // } else {
-          //   resolve(data);
-          // }
-          resolve(data);
+          if (data.length === 0) {
+            alert('近くの居酒屋は見つかりませんでした。');
+            resolve(data);
+          } else {
+            resolve(data);
+          }
         });
     };
-    // const error = () => {
-    //   alert('エラーのため情報が取得できませんた。');
-    // };
+    const error = () => {
+      alert('エラーのため情報が取得できませんた。');
+    };
     navigator.geolocation.getCurrentPosition(success, error);
   });
 };
