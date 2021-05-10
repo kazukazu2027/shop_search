@@ -36,7 +36,9 @@ const List = (props) => {
 
 export default List;
 
-const SListContainer = styled.div``;
+const SListContainer = styled.div`
+  cursor: pointer;
+`;
 
 const SMainTitle = styled.h1`
   font-size: 3rem;

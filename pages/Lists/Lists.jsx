@@ -3,7 +3,6 @@ import axios from "axios";
 import axiosJsonAdapter from "axios-jsonp";
 import useSWR from "swr";
 
-// {console.log(process.env.API_KEY)}
 const fetcher = () => {
   return new Promise((resolve) => {
     const success = (position) => {
@@ -17,16 +16,22 @@ const fetcher = () => {
         .then((res) => {
           const jsonp = res.data;
           const data = jsonp.results.shop;
-          resolve(data);
+          if(data.length === 0){
+            alert("近くの居酒屋は見つかりませんでした。")
+          }else{
+            resolve(data);
+          }
         });
     };
-    navigator.geolocation.getCurrentPosition(success);
+    const error = () => {
+      alert("エラーのため情報が取得できませんた。")
+    }
+    navigator.geolocation.getCurrentPosition(success, error);
   });
 };
 
 const Lists = () => {
   const { data } = useSWR("default", fetcher);
-  console.log(data);
   return (
     <>
       <List data={data} />

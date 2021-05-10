@@ -74,6 +74,3 @@ const SCopy = styled.div`
   padding-left: 10rem;
 `;
 
-const SA = styled.div`
-  text-decoration: none;
-`;
