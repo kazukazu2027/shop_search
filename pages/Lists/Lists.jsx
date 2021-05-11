@@ -17,7 +17,7 @@ const fetcher = () => {
           const jsonp = res.data;
           const data = jsonp.results.shop;
           if (data.length === 0) {
-            alert('近くの居酒屋は見つかりませんでした。');
+            alert('近くの居酒屋は見つかりませんでした');
             resolve(data);
           } else {
             resolve(data);
