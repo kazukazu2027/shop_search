@@ -8,7 +8,7 @@ const fetcher = () => {
     const success = (position) => {
       axios
         .get(
-          `https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=${process.env.API_KEY}&lat=${position.coords.latitude}&lng=${position.coords.longitude}&genre=G001&count=20&format=jsonp`,
+          `https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=${process.env.NEXT_PUBLIC_API_KEY}&lat=${position.coords.latitude}&lng=${position.coords.longitude}&genre=G001&count=20&format=jsonp`,
           {
             adapter: axiosJsonAdapter,
           }

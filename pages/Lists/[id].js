@@ -3,7 +3,7 @@ import { List } from '../../components/List';
 export async function getServerSideProps({ params }) {
   const id = params.id;
   const res = await fetch(
-    `https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=${process.env.API_KEY}&id=${id}&format=json`
+    `https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=${process.env.NEXT_PUBLIC_API_KEY}&id=${id}&format=json`
   );
   const json = await res.json();
   const lists = json.results.shop;
