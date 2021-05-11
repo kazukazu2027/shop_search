@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Link from 'next/link';
 import GlobalStyle from '../pages/GlobalStyle';
 
-const List = (props) => {
+const DataList = (props) => {
   const { data } = props;
   return (
     <SListContainer>
@@ -34,7 +34,7 @@ const List = (props) => {
   );
 };
 
-export default List;
+export default DataList;
 
 const SListContainer = styled.div`
   cursor: pointer;

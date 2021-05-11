@@ -1,7 +1,7 @@
-import List from '../../components/DataLists';
 import axios from 'axios';
 import axiosJsonAdapter from 'axios-jsonp';
 import useSWR from 'swr';
+import DataList from '../../components/DataLists';
 
 const fetcher = () => {
   return new Promise((resolve) => {
@@ -41,7 +41,7 @@ const Lists = () => {
   const { data } = useSWR('default', fetcher);
   return (
     <>
-      <List data={data} />
+      <DataList data={data} />
     </>
   );
 };

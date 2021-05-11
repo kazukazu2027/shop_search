@@ -20,9 +20,9 @@ export const getStaticProps = async({params}) => {
   };
 }
 
-const DataList = (props) => {
+const PageList = (props) => {
   const { list } = props;
   return <List list={list} />;
 };
 
-export default DataList;
+export default PageList;
