@@ -1,6 +1,13 @@
 import { List } from '../../components/List';
 
-export async function getServerSideProps({ params }) {
+export const getStaticPaths = async () => {
+  return {
+    paths: [],
+    fallback: 'blocking',
+  };
+};
+
+export const getStaticProps = async({params}) => {
   const id = params.id;
   const res = await fetch(
     `https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=${process.env.API_KEY}&id=${id}&format=json`

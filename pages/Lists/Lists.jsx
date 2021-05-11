@@ -16,12 +16,12 @@ const fetcher = () => {
         .then((res) => {
           const jsonp = res.data;
           const data = jsonp.results.shop;
-          // if (data.length === 0) {
-          //   alert('近くの居酒屋は見つかりませんでした');
-          //   resolve(data);
-          // } else {
-          //   resolve(data);
-          // }
+          if (data.length === 0) {
+            alert('近くの居酒屋は見つかりませんでした');
+            resolve(data);
+          } else {
+            resolve(data);
+          }
           resolve(data);
         });
     };
