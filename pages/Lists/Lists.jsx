@@ -27,12 +27,17 @@ const fetcher = () => {
     const error = () => {
       alert('エラーのため情報が取得できませんた。');
     };
-    navigator.geolocation.getCurrentPosition(success, error);
+    const options = {
+      enableHighAccuracy: true,
+      // timeout: 60000,
+      // maximumAge: 30000,
+    };
+    navigator.geolocation.getCurrentPosition(success, error, options);
   });
 };
 
 const Lists = () => {
-  const { data } = useSWR('default', fetcher);
+  const { data } = useSWR(process.env.API_KEY, fetcher);
   return (
     <>
       <List data={data} />
